@@ -17,7 +17,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
 
         $this->app->when(\App\Http\Services\LinkService::class)
-            ->needs(\App\Http\Contracts\Repositories\LinkRepository::class)->give(\App\Http\Repositories\Links\Eloquent\LinkRepository::class);
+            ->needs(\App\Http\Contracts\Repositories\LinkRepository::class)->give(\App\Http\Repositories\Links\DB\LinkRepository::class);
 
     }//end register()
 

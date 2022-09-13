@@ -32,14 +32,15 @@ class FormRequest extends HttpFormRequest
      */
     protected function failedValidation(Validator $validator)
     {
-        $errors = (new ValidationException($validator))->errors();
+        $validator = (new ValidationException($validator))->validator;
 
         throw new HttpResponseException(
             response()->json(
                 [
-                    "status" => "error",
-                    "code"   => 422,
-                    "errors" => $errors,
+                    "status"  => "error",
+                    "code"    => 422,
+                    "error"   => $validator->errors(),
+                    "message" => $validator->errors()->all(),
                 ],
                 422
             )

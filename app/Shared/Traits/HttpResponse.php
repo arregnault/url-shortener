@@ -47,4 +47,16 @@ trait HttpResponse
     }//end errorResponse()
 
 
+    /**
+     * Build an error response from exception instance
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function exceptionToResponse()
+    {
+        return $this->errorResponse($this->getMessage(), $this->getCode());
+
+    }//end exceptionToResponse()
+
+
 }

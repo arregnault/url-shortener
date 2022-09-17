@@ -38,7 +38,7 @@ class LinkRepository implements LinkRepositoryContract
 
     public function deleteLink($primaryKey): bool
     {
-        return $this->query()->where(LinkConsts::ID, $primaryKey)->delete();
+        return boolval($this->query()->where(LinkConsts::ID, $primaryKey)->delete());
 
     }//end deleteLink()
 
@@ -76,7 +76,7 @@ class LinkRepository implements LinkRepositoryContract
     {
         $data = collect($data)->only([LinkConsts::CODE, LinkConsts::URL])->all();
         $data[LinkConsts::UPDATED_AT] = date(DateFormatConsts::DB_DATE_FORMAT);
-        return $this->query()->where(LinkConsts::ID, $primaryKey)->update($data);
+        return boolval($this->query()->where(LinkConsts::ID, $primaryKey)->update($data));
 
     }//end updateLink()
 

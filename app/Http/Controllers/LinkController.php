@@ -99,7 +99,7 @@ class LinkController extends Controller implements LinkControllerDoc
     public function update(UpdateLinkRequest $request, $id)
     {
         $data     = $request->only(["url"]);
-        return  $response = $this->service->updateLink($id, $data);
+        $response = $this->service->updateLink($id, $data);
         return $this->successResponse(new LinkResource($response));
 
     }//end update()

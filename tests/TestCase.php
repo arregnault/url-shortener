@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Shared\Traits\Tests\Assert;
 use \Mockery;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
@@ -9,7 +10,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication, DatabaseTransactions, WithFaker;
+    use CreatesApplication, DatabaseTransactions, WithFaker, Assert;
 
     /**
      * The Faker instance.

@@ -65,8 +65,7 @@ class LinkController extends Controller implements LinkControllerDoc
      */
     public function show(Request $request, $id)
     {
-        $data     = $request->only([]);
-        $response = $this->service->getLink($id, $data);
+        $response = $this->service->getLink($id);
         return $this->successResponse(new LinkResource($response));
 
     }//end show()

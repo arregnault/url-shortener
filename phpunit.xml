@@ -16,6 +16,15 @@
         <include>
             <directory suffix=".php">./app</directory>
         </include>
+        <exclude>
+            <directory suffix=".php">./app/http/contracts</directory>
+            <directory suffix=".php">./app/http/docs</directory>
+            <directory suffix=".php">./app/http/requests</directory>
+            <directory suffix=".php">./app/shared/consts</directory>
+            <directory suffix=".php">./app/shared/enums</directory>
+            <directory suffix=".php">./app/shared/interfaces</directory>
+            <directory suffix=".php">./app/shared/middleware</directory>
+        </exclude>
     </coverage>
     <php>
         <server name="APP_ENV" value="testing"/>
